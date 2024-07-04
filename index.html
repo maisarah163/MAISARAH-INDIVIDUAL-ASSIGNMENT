@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Personal Website!</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="left-text">
+            <h1>Maisarah Solahudin</h1>
+            <p class="profession">Business Administration Student</p>
+            <p>Welcome to my personal website. Here you can learn more about me, my education, skills, experiences, and how to contact me. Feel free to explore!</p>
+        </div>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="images/portrait 1.jpg" alt="Portrait 1"></div>
+                <div class="slide"><img src="images/portrait 2.jpg" alt="Portrait 2"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 IMS456. Basic Web Design and Content Management.</p>
+    </footer>
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.style.transform = `translateX(-${slideIndex * 100}%)`;
+            });
+            slideIndex = (slideIndex + 1) % totalSlides;
+        }
+
+        setInterval(showSlides, 3000);
+    </script>
+</body>
+</html>

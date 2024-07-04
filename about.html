@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="rectangles-container">
+            <div class="rectangle" data-more-info="personal-info">
+                <img src="images/personal.jpg" alt="Personal">
+                <h3>Personal</h3>
+                <p>Welcome! Curious about who I am? Let's find out together.</p>
+                <div class="read-more-btn">Read More</div>
+            </div>
+            <div class="rectangle" data-more-info="interest-info">
+                <img src="images/interest.jpg" alt="Interest">
+                <h3>Interests</h3>
+                <p>Discover what fascinates me. Let's explore my interests and the things I love to do.</p>
+                <div class="read-more-btn">Read More</div>
+            </div>
+            <div class="rectangle" data-more-info="family-info">
+                <img src="images/family.jpg" alt="Family">
+                <h3>Family</h3>
+                <p>Take a look at my family, the foundation of my happiness and the source of my strength.</p>
+                <div class="read-more-btn">Read More</div>
+            </div>
+            <div class="rectangle" data-more-info="friends-info">
+                <img src="images/friends.jpg" alt="Friends">
+                <h3>Friends</h3>
+                <p>Here's to the laughter, adventures, and memories shared with my closest friends.</p>
+                <div class="read-more-btn">Read More</div>
+            </div>
+        </div>
+        <div class="more-info" id="personal-info">
+            <h2>Personal Information</h2>
+            <div class="info-content">
+                <div class="info-text">
+                    <p>Name: Nur Maisarah Binti Solahudin</p>
+                    <p>Age: 21 years old</p>
+                    <p>Gender: Female</p>
+                    <p>Birthday: 16 January 2003</p>
+                    <p>Race: Melayu</p>
+                    <p>Religion: Islam</p>
+                    <p>Residence: Besut, Terengganu</p>
+                </div>
+                <div class="gallery">
+                    <img src="images/personal 1.jpg" alt="Personal 1">
+                    <img src="images/personal 2.jpg" alt="Personal 2">
+                </div>
+            </div>
+        </div>
+        <div class="more-info" id="interest-info">
+            <h2>Interests</h2>
+            <div class="info-content">
+                <div class="info-text">
+                    <p>I enjoy Korean cuisine, badminton, and Korean dramas, which enrich my life and connect me with like-minded individuals through shared experiences.</p>
+                    <p>Food: Love to eat western food, especially Korean Food</p>
+                    <p>Sport: Love to play sports, especially Badminton</p>
+                    <p>Drama: Love to watch Korean dramas in my free time</p>
+                </div>
+                <div class="gallery">
+                    <img src="images/interest 1.jpg" alt="Interest 1">
+                    <img src="images/interest 2.jpg" alt="Interest 2">
+                    <img src="images/interest 3.jpg" alt="Interest 3">
+                </div>
+            </div>
+        </div>
+        <div class="more-info" id="family-info">
+            <h2>Family</h2>
+            <div class="info-content">
+                <div class="info-text">
+                    <p>Family is my foundation and greatest source of strength. Their love and support inspire me daily, making every moment together truly special.</p>
+                    <p>Father: Solahudin Bin Sahad</p>
+                    <p>Mother: Zatul Hijanah Binti Mat Nasir</p>
+                    <p>No. of Siblings: 7</p>
+                    <p>Order of Birth: 3 from 7</p>
+                    <p>Resides at: Kg. Apal, Besut, Terengganu</p>
+                </div>
+                <div class="gallery">
+                    <img src="images/family 1.jpg" alt="Family 1">
+                    <img src="images/family 2.jpg" alt="Family 2">
+                </div>
+            </div>
+        </div>
+        <div class="more-info" id="friends-info">
+            <h2>Friends</h2>
+            <div class="info-content">
+                <div class="info-text">
+                    <p>Friendship is a cornerstone of my life. From childhood companions to lifelong confidants, my friends are like family, bringing joy and unwavering support to my everyday experiences.</p>
+                    <p>Each friendship holds cherished memories and meaningful connections that continue to shape who I am today.</p>
+                </div>
+                <div class="gallery">
+                    <img src="images/friends 1.jpg" alt="Friends 1">
+                    <img src="images/friends 2.jpg" alt="Friends 2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 IMS456. Basic Web Design and Content Management.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const readMoreButtons = document.querySelectorAll('.read-more-btn');
+            const moreInfoSections = document.querySelectorAll('.more-info');
+
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const infoId = event.currentTarget.parentElement.getAttribute('data-more-info');
+                    moreInfoSections.forEach(section => {
+                        if (section.id === infoId) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!event.target.classList.contains('read-more-btn')) {
+                    moreInfoSections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                }
+            });
+
+            moreInfoSections.forEach(section => {
+                section.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
